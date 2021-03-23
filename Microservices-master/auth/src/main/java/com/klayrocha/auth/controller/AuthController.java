@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.klayrocha.auth.entity.User;
 import com.klayrocha.auth.jwt.JwtTokenProvider;
 import com.klayrocha.auth.repository.UserRepository;
-import com.klayrocha.auth.vo.UserVO;
 
 import static org.springframework.http.ResponseEntity.ok;
 
@@ -44,10 +44,10 @@ public class AuthController {
 
 	@PostMapping(produces = { "application/json", "application/xml", "application/x-yaml" }, consumes = {
 			"application/json", "application/xml", "application/x-yaml" })
-	public ResponseEntity<?> login(@RequestBody UserVO userVO) {
+	public ResponseEntity<?> login(@RequestBody User userResult) {
 		try {
-			var username = userVO.getUserName();
-			var password = userVO.getPassword();
+			var username = userResult.getUsername();
+			var password = userResult.getPassword();
 			
 			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
 			
@@ -56,7 +56,7 @@ public class AuthController {
 			var token = "";
 			
 			if(user != null) {
-				token = jwtTokenProvider.createToken(username, user.getRoles());
+				token = "Bearer "+ jwtTokenProvider.createToken(username, user.getRoles());
 			} else {
 				throw new UsernameNotFoundException("User name not found");
 			}
