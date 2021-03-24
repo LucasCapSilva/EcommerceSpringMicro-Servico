@@ -45,7 +45,7 @@ http://localhost:8761/registry
  
  
 
-## cadastro 
+## cadastro de usuario
 
 http://localhost:8080/api/auth/user/register POST
 
@@ -54,7 +54,7 @@ http://localhost:8080/api/auth/user/register POST
     "password":"123456"
 }
 
-## login 
+## login de usuario
 
 http://localhost:8080/api/auth/user/login POST
 
