@@ -1,11 +1,11 @@
 server:
-  port: 8081
+  port: 8082
   servlet:
-    context-path: /crud
+    context-path: /pagamento
     
 spring:
   application:
-    name: crud
+    name: pagamento
   jpa:
     show-sql: false
     hibernate:
@@ -17,26 +17,25 @@ spring:
   jmx:
     enabled: false
   datasource:
-    url: jdbc:mysql://localhost:3306/crud?createDatabaseIfNotExist=true&serverTimezone=UTC&useSSl=false
-    username: root  
-    password: Admin357/
+    url: jdbc:mysql://localhost:3306/pagamento?createDatabaseIfNotExist=true&serverTimezone=UTC&useSSl=false
+    username: root
+    password: Admin357/  
 
   rabbitmq:
     host: localhost 
     port: 5672
-    username: admin
-    password: admin 
-    
+    username: root
+    password: Admin357/ 
+        
 crud:
   rabbitmq:
     exchange: crud.exchange
-    routingkey: crud.produto.routingkey
-    
+    queue: crud.produto.queue          
+
 security:
   jwt:
     token: 
       secret-key: chave_microservices
-      
       
 eureka:
   instance: 
@@ -44,5 +43,3 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/registry/eureka
-        
-        

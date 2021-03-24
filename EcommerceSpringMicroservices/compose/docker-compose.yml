@@ -9,7 +9,7 @@ services:
       - $PWD/storage/rabbitmq1:/var/lib/rabbitmq
     environment:
       - RABBITMQ_ERLANG_COOKIE=secret_pass
-      - RABBITMQ_DEFAULT_USER=admin
-      - RABBITMQ_DEFAULT_PASS=admin
+      - RABBITMQ_DEFAULT_USER=root
+      - RABBITMQ_DEFAULT_PASS=Admin357/
 volumes:
   rabbitmq:
