@@ -9,21 +9,8 @@ import org.modelmapper.ModelMapper;
 
 import com.capelotto.pagamento.data.vo.ProdutoVO;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
 @Entity
 @Table(name = "produto")
-@Getter
-@Setter
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode
 public class Produto {
 
 	@Id
@@ -32,6 +19,22 @@ public class Produto {
 	@Column(name = "estoque", nullable = false, length = 10)
 	private Integer estoque;
 	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Integer getEstoque() {
+		return estoque;
+	}
+
+	public void setEstoque(Integer estoque) {
+		this.estoque = estoque;
+	}
+
 	public static Produto create(ProdutoVO produtoVO) {
 		return new ModelMapper().map(produtoVO, Produto.class);
 	}

@@ -20,21 +20,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import com.capelotto.pagamento.data.vo.VendaVO;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
 @Entity
 @Table(name = "venda")
-@Getter
-@Setter
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode
 public class Venda implements Serializable {
 	
 	private static final long serialVersionUID = 7941763390118968225L;
@@ -53,6 +40,42 @@ public class Venda implements Serializable {
 	@Column(name = "valorTotal", nullable = false, length = 10)
 	private Double valorTotal;
 	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Date getData() {
+		return data;
+	}
+
+	public void setData(Date data) {
+		this.data = data;
+	}
+
+	public List<ProdutoVenda> getProdutos() {
+		return produtos;
+	}
+
+	public void setProdutos(List<ProdutoVenda> produtos) {
+		this.produtos = produtos;
+	}
+
+	public Double getValorTotal() {
+		return valorTotal;
+	}
+
+	public void setValorTotal(Double valorTotal) {
+		this.valorTotal = valorTotal;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	public static Venda create(VendaVO  vendaVO) {
 		return new ModelMapper().map(vendaVO, Venda.class);
 	}

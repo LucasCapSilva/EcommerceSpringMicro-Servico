@@ -16,21 +16,8 @@ import org.modelmapper.ModelMapper;
 
 import com.capelotto.pagamento.data.vo.ProdutoVendaVO;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
 @Entity
 @Table(name = "produto_venda")
-@Getter
-@Setter
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode
 public class ProdutoVenda implements Serializable {
 	
 	private static final long serialVersionUID = 933913058666341470L;
@@ -49,6 +36,42 @@ public class ProdutoVenda implements Serializable {
 	@JoinColumn(name = "id_venda")
 	private Venda venda;
 	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Long getIdProduto() {
+		return idProduto;
+	}
+
+	public void setIdProduto(Long idProduto) {
+		this.idProduto = idProduto;
+	}
+
+	public Integer getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(Integer quantidade) {
+		this.quantidade = quantidade;
+	}
+
+	public Venda getVenda() {
+		return venda;
+	}
+
+	public void setVenda(Venda venda) {
+		this.venda = venda;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	public static ProdutoVenda create(ProdutoVendaVO produtoVendaVO) {
 		return new ModelMapper().map(produtoVendaVO, ProdutoVenda.class);
 	}
