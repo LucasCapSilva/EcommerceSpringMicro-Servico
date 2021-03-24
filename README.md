@@ -37,11 +37,11 @@ Spring Netflix Zull
   queue = crud.produto.queue
   Routing key = crud.produto.routingkey
  
- ![alt text](https://i.imgur.com/quRI7V2.png)
+ ![alt text](https://i.imgur.com/voo1mWW.png)
  
 ## Criar uma nova instancia
 
- ![alt text](https://i.imgur.com/voo1mWW.png)
+ ![alt text](https://i.imgur.com/l4NlyQs.png)
 
 
 ## executar Spring Eureka
