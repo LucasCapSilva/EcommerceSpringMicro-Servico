@@ -28,6 +28,8 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
 		return bCryptPasswordEncoder;
 	}
 	
+	
+	
 	@Bean
 	@Override
 	public AuthenticationManager authenticationManagerBean()  throws Exception {
@@ -42,7 +44,8 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
 			   .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 			   .and()
 			        .authorizeRequests()
-			        .antMatchers("/login").permitAll()
+			        .antMatchers("/user/login").permitAll()
+			        .antMatchers("/user/register").permitAll()
 			        .anyRequest().authenticated()
 			   .and()
 			   .apply(new JwtConfigurer(jwtTokenProvider));
