@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.capelotto.crud.entity.Produto;
+import com.capelotto.crud.message.ProdutoSendMessage;
 import com.capelotto.crud.repository.ProdutoRepository;
 
 
@@ -26,6 +27,9 @@ public class ProdutoController {
 	
 	@Autowired
 	private ProdutoRepository repository;
+	
+	@Autowired
+	private ProdutoSendMessage produtoSendMessage;
 
 	@GetMapping
 	public ResponseEntity<List<Produto>> GetAll(){
@@ -39,8 +43,10 @@ public class ProdutoController {
 				.orElse(ResponseEntity.notFound().build());
 		}
 	
-	@PostMapping
+	@PostMapping(produces = {"application/json","application/xml","application/x-yaml"}, 
+			     consumes = {"application/json","application/xml","application/x-yaml"})
 	public ResponseEntity<Produto> post (@RequestBody Produto produto){
+		produtoSendMessage.sendMessage(produto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(produto));
 	}
 	

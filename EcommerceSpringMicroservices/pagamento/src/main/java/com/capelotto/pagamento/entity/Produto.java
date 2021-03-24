@@ -2,6 +2,8 @@ package com.capelotto.pagamento.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -14,6 +16,7 @@ import com.capelotto.pagamento.data.vo.ProdutoVO;
 public class Produto {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.TABLE)
 	private Long id;
 	
 	@Column(name = "estoque", nullable = false, length = 10)
