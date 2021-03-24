@@ -32,6 +32,13 @@ Spring Netflix Zull
  
  ![alt text](https://i.imgur.com/quRI7V2.png)
  
+  ## add bind na minha exchange
+ 
+  queue = crud.produto.queue
+  Routing key = crud.produto.routingkey
+ 
+ ![alt text](https://i.imgur.com/voo1mWW.png)
+ 
 ## Criar uma nova instancia
 
  ![alt text](https://i.imgur.com/l4NlyQs.png)
@@ -45,9 +52,18 @@ http://localhost:8761/registry
  
  
 
-## login 
+## cadastro de usuario
 
-http://localhost:8080/api/auth/login POST
+http://localhost:8080/api/auth/user/register POST
+
+{
+    "userName":"lucas@email.com",
+    "password":"123456"
+}
+
+## login de usuario
+
+http://localhost:8080/api/auth/user/login POST
 
 {
     "userName":"lucas@email.com",
