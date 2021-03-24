@@ -45,9 +45,18 @@ http://localhost:8761/registry
  
  
 
+## cadastro 
+
+http://localhost:8080/api/auth/user/register POST
+
+{
+    "userName":"lucas@email.com",
+    "password":"123456"
+}
+
 ## login 
 
-http://localhost:8080/api/auth/login POST
+http://localhost:8080/api/auth/user/login POST
 
 {
     "userName":"lucas@email.com",
