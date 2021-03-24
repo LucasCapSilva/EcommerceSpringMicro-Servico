@@ -5,13 +5,6 @@ RabbitMQ
 Spring Netflix Eureka
 Spring Netflix Zull
 
-## atenção app utiliza lombok precisa ser instalado na IDE
-
-https://projectlombok.org/download
-
-![alt text](https://i.imgur.com/DrAOFAP.png)
-
-
 ## Executar os microservicos
 
  ![alt text](https://i.imgur.com/i52vFnQ.png)
