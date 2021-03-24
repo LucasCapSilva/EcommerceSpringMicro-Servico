@@ -32,9 +32,16 @@ Spring Netflix Zull
  
  ![alt text](https://i.imgur.com/quRI7V2.png)
  
+  ## add bind na minha exchange
+ 
+  queue = crud.produto.queue
+  Routing key = crud.produto.routingkey
+ 
+ ![alt text](https://i.imgur.com/quRI7V2.png)
+ 
 ## Criar uma nova instancia
 
- ![alt text](https://i.imgur.com/l4NlyQs.png)
+ ![alt text](https://i.imgur.com/voo1mWW.png)
 
 
 ## executar Spring Eureka
