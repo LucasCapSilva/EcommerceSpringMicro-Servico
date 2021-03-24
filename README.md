@@ -91,7 +91,7 @@ http://localhost:8080/api/pagamento/venda POST
                         "quantidade":1
                     }
                 ],
-                "valorTotal": 2000.0
+                "valorTotal": 2000.0}
                
 }
 
