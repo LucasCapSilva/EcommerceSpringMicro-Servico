@@ -5,6 +5,10 @@ RabbitMQ
 Spring Netflix Eureka
 Spring Netflix Zull
 
+## Arquitetura do projeto
+
+ ![alt text](https://i.imgur.com/Ob5X073.png)
+
 ## Executar os microservicos
 
  ![alt text](https://i.imgur.com/i52vFnQ.png)
