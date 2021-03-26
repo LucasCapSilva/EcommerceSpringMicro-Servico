@@ -8,6 +8,12 @@ Spring Netflix Zull
 ## Arquitetura do projeto
 
  ![alt text](https://i.imgur.com/qjBSljU.jpg)
+ 
+ ## configurar microservico de email
+ 
+ sendMail/src/main/resources/env/mail.properties
+
+ ![alt text](https://i.imgur.com/uA3lQn0.png)
 
 ## Executar os microservicos
 
