@@ -7,7 +7,7 @@ Spring Netflix Zull
 
 ## Arquitetura do projeto
 
- ![alt text](https://i.imgur.com/VSP3xgj.jpg)
+ ![alt text](https://i.imgur.com/qjBSljU.jpg)
 
 ## Executar os microservicos
 
