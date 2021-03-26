@@ -23,11 +23,14 @@ Spring Netflix Zull
 
 ## executar rabitMQ
 
- ![alt text](https://i.imgur.com/Y6cRsk8.png)
+![alt text](https://i.imgur.com/Y6cRsk8.png)
 
- docker-compose up -d
- 
- http://localhost:15672/
+docker-compose up -d
+
+![alt text](https://i.imgur.com/r1HppmO.png)
+
+
+http://localhost:15672/
  
  user: admin
  password: admin
