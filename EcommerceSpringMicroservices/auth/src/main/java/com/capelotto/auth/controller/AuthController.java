@@ -25,8 +25,10 @@ import com.capelotto.auth.config.SecurityConfig;
 import com.capelotto.auth.entity.Permission;
 import com.capelotto.auth.entity.User;
 import com.capelotto.auth.jwt.JwtTokenProvider;
+import com.capelotto.auth.message.sendMessage;
 import com.capelotto.auth.repository.PermissionRepository;
 import com.capelotto.auth.repository.UserRepository;
+
 
 import static org.springframework.http.ResponseEntity.ok;
 
@@ -43,6 +45,9 @@ public class AuthController {
 	
 	@Autowired
 	private PermissionRepository permissionRepository;
+	
+	@Autowired
+	private sendMessage sendMessage;
 
 	@Autowired
 	public AuthController(AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider,
@@ -83,7 +88,7 @@ public class AuthController {
 		user.setPassword(security.passwordEncoder().encode(user.getPassword()));
 		user.setPermissions(Arrays.asList(permission));
 		userRepository.save(user);
-		
+		sendMessage.sendMessage(user);
 		return ResponseEntity.ok(user);		
 	}
 

@@ -1,11 +1,11 @@
 server:
-  port: 8083
+  port: 8086
   servlet:
-    context-path: /auth
+    context-path: /mail
     
 spring:
   application:
-    name: auth
+    name: mail
   jpa:
     show-sql: false
     hibernate:
@@ -17,27 +17,30 @@ spring:
   jmx:
     enabled: false
   datasource:
-    url: jdbc:mysql://localhost:3306/auth?createDatabaseIfNotExist=true&serverTimezone=UTC&useSSl=false
+    url: jdbc:mysql://localhost:3306/mail?createDatabaseIfNotExist=true&serverTimezone=UTC&useSSl=false
     username: root
-    password: Admin357/
+    password: Admin357/  
 
   rabbitmq:
     host: localhost 
     port: 5672
     username: root
     password: Admin357/ 
-    
+        
+crud:
+  rabbitmq:
+    exchange: crud.exchange
+    queue: crud.produto.queue          
+
 auth:
   rabbitmq:
     exchange: auth.exchange
-    routingkey: auth.user.routingkey
+    queue: auth.user.queue   
 
-    
 security:
   jwt:
     token: 
       secret-key: chave_microservices
-      expire-length: 360000  
       
 eureka:
   instance: 

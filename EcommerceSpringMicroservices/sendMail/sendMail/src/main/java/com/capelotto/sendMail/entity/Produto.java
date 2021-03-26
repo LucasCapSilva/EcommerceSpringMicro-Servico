@@ -1,0 +1,46 @@
+package com.capelotto.sendMail.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.modelmapper.ModelMapper;
+
+import com.capelotto.sendMail.data.vo.ProdutoVO;
+
+
+
+@Entity
+@Table(name = "produto")
+public class Produto {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.TABLE)
+	private Long id;
+	
+	@Column(name = "estoque", nullable = false, length = 10)
+	private Integer estoque;
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Integer getEstoque() {
+		return estoque;
+	}
+
+	public void setEstoque(Integer estoque) {
+		this.estoque = estoque;
+	}
+
+	public static Produto create(ProdutoVO produtoVO) {
+		return new ModelMapper().map(produtoVO, Produto.class);
+	}
+}

@@ -33,5 +33,11 @@ zuul:
       path: /auth/**
       service-id: auth
       strip-prefix: false
-      custom-sensitive-headers: true           
+      custom-sensitive-headers: true    
+      
+    mail:
+      path: /mail/**
+      service-id: mail
+      strip-prefix: false
+      custom-sensitive-headers: true         
                   
