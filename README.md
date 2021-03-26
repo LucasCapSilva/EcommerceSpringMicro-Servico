@@ -130,3 +130,17 @@ http://localhost:8080/api/pagamento/venda/mostrarPorta
 
 
  ![alt text](https://i.imgur.com/IZ0Dmvl.png)
+ 
+ 
+ ## Documentação das tecnologias
+ 
+ spring = https://spring.io/
+ 
+ Spring Netflix = https://spring.io/projects/spring-cloud-netflix
+ 
+ spring security+JWT = https://www.baeldung.com/spring-security-oauth-jwt
+ 
+ RabbitMQ = https://spring.io/guides/gs/messaging-rabbitmq/
+ 
+ sendMail spring = https://www.baeldung.com/spring-email
+ 
