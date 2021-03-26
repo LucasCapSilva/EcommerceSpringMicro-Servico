@@ -26,13 +26,32 @@ Spring Netflix Zull
  user: admin
  password: admin
  
+  ## criar auth.exchange
+ 
+ auth.exchange
+ 
+ ![alt text](https://i.imgur.com/quRI7V2.png)
+ 
+ crud.exchange
+ 
+ ![alt text](https://i.imgur.com/DoBowid.png)
+ 
  ## add filas
  
- crud.produto.queue
+ auth.user.queue
+ 
+ ![alt text](https://i.imgur.com/pc7E0FA.png)
+ 
+  crud.produto.queue
  
  ![alt text](https://i.imgur.com/quRI7V2.png)
  
   ## add bind na minha exchange
+ 
+  queue = auth.user.queue
+  Routing key = auth.user.routingkey
+ 
+ ![alt text](https://i.imgur.com/dXowFdY.png)
  
   queue = crud.produto.queue
   Routing key = crud.produto.routingkey
