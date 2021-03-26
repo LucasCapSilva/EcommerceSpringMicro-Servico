@@ -35,7 +35,7 @@ http://localhost:15672/
  user: admin
  password: admin
  
-  ## criar auth.exchange
+  ## criar Exchange
  
  auth.exchange
  
@@ -124,7 +124,7 @@ http://localhost:8080/api/pagamento/venda POST
                
 }
 
-## mostrar endPorta loadBalance
+## Mostrar porta loadBalance
 
 http://localhost:8080/api/pagamento/venda/mostrarPorta
 
