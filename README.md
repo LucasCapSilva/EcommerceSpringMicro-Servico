@@ -57,8 +57,9 @@ http://localhost:8761/registry
 http://localhost:8080/api/auth/user/register POST
 
 {
-    "userName":"lucas@email.com",
-    "password":"123456"
+    "name":"Lucas Capelotto",
+    "userName": "lucas@email.com",
+    "password": "123456"
 }
 
 ## login de usuario
