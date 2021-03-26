@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
@@ -31,14 +32,17 @@ public class UserReceiveMessage {
 	@Autowired
 	public Mailer mailer;
 	
+	@Autowired
+	private Environment env;
+	
 	
 	@RabbitListener(queues = {"${auth.rabbitmq.queue}"})
 	public void receive2 (@Payload UserVO userVO){
 		userRepository.save(User.create(userVO));
 		User userResult = service.getLastUser();
-		mailer.enviar(new Mensagem("Lucas Teste <>", 
+		mailer.enviar(new Mensagem("Email de cadastro <"+env.getProperty("mail.smtp.username")+">", 
 				Arrays.asList("<"+userResult.getUserName()+">")
-				, "Conta criada Com sucesso ","Muito obrigado por cadastra no nosso site "+userResult.getUserName()));
+				, "Conta criada Com sucesso ","Muito obrigado "+userResult.getName()+" por se cadastrar no nosso site "));
 		System.out.println(userResult.toString());
 	}
 }

@@ -19,6 +19,8 @@ import javax.persistence.Table;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.sun.istack.NotNull;
+
 
 @Entity
 @Table(name = "user")
@@ -29,6 +31,10 @@ public class User implements UserDetails, Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column(name = "name")
+	@NotNull
+	private String name;
 
 	@Column(name = "user_name", unique = true)
 	private String userName;
@@ -92,6 +98,16 @@ public class User implements UserDetails, Serializable{
 	@Override
 	public boolean isEnabled() {
 		return this.enabled;
+	}
+	
+	
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public Long getId() {

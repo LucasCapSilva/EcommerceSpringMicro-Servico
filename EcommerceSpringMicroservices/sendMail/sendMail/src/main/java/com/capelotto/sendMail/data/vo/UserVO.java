@@ -18,6 +18,9 @@ public class UserVO extends RepresentationModel<ProdutoVO> implements Serializab
 	@JsonProperty("id")	
 	private Long id;
 	
+	@JsonProperty("name")
+	private String name;
+	
 	@JsonProperty("userName")
 	private String userName;
 
@@ -27,6 +30,15 @@ public class UserVO extends RepresentationModel<ProdutoVO> implements Serializab
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getUserName() {

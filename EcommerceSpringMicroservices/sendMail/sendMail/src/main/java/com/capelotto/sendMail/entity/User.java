@@ -20,8 +20,12 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private Long id;
 	
+	@Column(name = "name")
+	private String name;
+	
 	@Column(name = "user_name", unique = true)
 	private String userName;
+	
 
 	public Long getId() {
 		return id;
@@ -29,6 +33,15 @@ public class User {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getUserName() {
